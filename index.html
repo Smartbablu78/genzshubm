@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Community Access</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:#ffffff;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(129,90,255,0.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(0,196,255,0.15),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #0a1020,
+            #101a32,
+            #08101d
+        );
+}
+
+
+/* =========================
+   BACKGROUND DECORATION
+========================= */
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    border:1px solid
+        rgba(255,255,255,0.05);
+
+    top:-180px;
+    right:-150px;
+
+    box-shadow:
+        0 0 100px
+        rgba(93,74,255,0.12);
+
+    pointer-events:none;
+}
+
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    border:1px solid
+        rgba(255,255,255,0.04);
+
+    bottom:-150px;
+    left:-120px;
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.access-card{
+
+    position:relative;
+
+    width:100%;
+    max-width:650px;
+
+    padding:
+        48px
+        38px
+        38px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(31,45,77,0.92),
+            rgba(14,25,47,0.94)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    box-shadow:
+
+        0 30px 90px
+        rgba(0,0,0,0.55),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.08);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    animation:
+        cardEnter
+        0.8s
+        ease;
+}
+
+
+@keyframes cardEnter{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(25px)
+            scale(0.97);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.access-icon{
+
+    width:115px;
+    height:115px;
+
+    margin:
+        0 auto
+        30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:46px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(110,88,255,0.22),
+            rgba(0,187,255,0.16)
+        );
+
+    border:
+        2px solid
+        rgba(132,114,255,0.75);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(119,99,255,0.35),
+
+        0 0 60px
+        rgba(0,174,255,0.12);
+
+    animation:
+        iconFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes iconFloat{
+
+    0%,
+    100%{
+        transform:
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            translateY(-8px);
+    }
+
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    letter-spacing:-1px;
+
+    margin-bottom:16px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #b9c9ff,
+            #8adfff
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description{
+
+    max-width:520px;
+
+    margin:
+        0 auto
+        30px;
+
+    color:
+        #b8c4d8;
+
+    font-size:18px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   FEATURE TAGS
+========================= */
+
+.features{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:32px;
+}
+
+
+.feature{
+
+    padding:
+        12px
+        18px;
+
+    border-radius:50px;
+
+    color:#dce6f5;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    transition:
+        0.25s
+        ease;
+}
+
+
+.feature:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,255,255,0.10);
+}
+
+
+/* =========================
+   MAIN BUTTON
+========================= */
+
+.access-button{
+
+    position:relative;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    padding:
+        20px
+        25px;
+
+    border:none;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    font-size:21px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+             #04ff00,
+            #0df015c0,
+            #04ff00
+        );
+
+    box-shadow:
+
+        0 14px 35px
+        rgba(52,124,255,0.30);
+
+    transition:
+        transform
+        0.25s
+        ease,
+
+        box-shadow
+        0.25s
+        ease;
+}
+
+
+.access-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.35),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    animation:
+        buttonShine
+        3.5s
+        infinite;
+}
+
+
+@keyframes buttonShine{
+
+    0%{
+        left:-120%;
+    }
+
+    45%{
+        left:140%;
+    }
+
+    100%{
+        left:140%;
+    }
+
+}
+
+
+.access-button:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+
+        0 20px 45px
+        rgba(52,124,255,0.45);
+}
+
+
+.access-button:active{
+
+    transform:
+        scale(0.98);
+}
+
+
+/* =========================
+   STATUS BOX
+========================= */
+
+.status-box{
+
+    margin-top:24px;
+
+    padding:
+        17px
+        20px;
+
+    border-radius:16px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.045
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color:#aebbd0;
+
+    font-size:15px;
+
+    line-height:1.6;
+}
+
+
+.status-dot{
+
+    display:inline-block;
+
+    width:9px;
+    height:9px;
+
+    margin-right:7px;
+
+    border-radius:50%;
+
+    background:#d8140afa;
+
+    box-shadow:
+        0 0 12px
+        rgba(67,230,149,0.8);
+}
+
+
+/* =========================
+   INFO TEXT
+========================= */
+
+.info-text{
+
+    margin-top:28px;
+
+    color:#8e9bb0;
+
+    font-size:15px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    margin-top:28px;
+
+    padding-top:22px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    color:#6f7d94;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    body{
+        padding:15px;
+        overflow:auto;
+    }
+
+    .access-card{
+
+        padding:
+            38px
+            20px
+            28px;
+
+        border-radius:24px;
+    }
+
+
+    .access-icon{
+
+        width:95px;
+        height:95px;
+
+        font-size:38px;
+
+        margin-bottom:25px;
+    }
+
+
+    h1{
+
+        font-size:31px;
+
+        letter-spacing:
+            -0.5px;
+    }
+
+
+    .description{
+
+        font-size:16px;
+
+        line-height:1.65;
+    }
+
+
+    .features{
+
+        gap:9px;
+    }
+
+
+    .feature{
+
+        font-size:13px;
+
+        padding:
+            10px
+            14px;
+    }
+
+
+    .access-button{
+
+        padding:
+            18px
+            15px;
+
+        font-size:18px;
+
+        border-radius:16px;
+    }
+
+
+    .status-box{
+
+        font-size:14px;
+    }
+
+
+    .info-text{
+
+        font-size:14px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="access-card">
+
+
+    <!-- ICON -->
+
+    <div class="access-icon">
+        ✦
+    </div>
+
+
+    <!-- TITLE -->
+
+    <h1>
+        Community Access
+    </h1>
+
+
+    <!-- DESCRIPTION -->
+
+    <p class="description">
+
+        Explore community updates, useful information
+        and available resources in one convenient place.
+
+    </p>
+
+
+    <!-- FEATURES -->
+
+    <div class="features">
+
+        <div class="feature">
+            ✨ Easy Access
+        </div>
+
+        <div class="feature">
+            ⚡ Quick Updates
+        </div>
+
+        <div class="feature">
+            ✓ Community Info
+        </div>
+
+    </div>
+
+
+    <!-- MAIN BUTTON -->
+
+    <!-- अपने हिसाब से LINK बदल देना -->
+
+    <a
+        href="https://t.me/+cfHxwUVuaH4wNzBl"
+        class="access-button"
+        id="accessButton"
+    >
+
+        Continue Here
+
+        <span>
+            →
+        </span>
+
+    </a>
+
+
+    <!-- STATUS -->
+
+    <div class="status-box">
+
+        <span class="status-dot"></span>
+
+        Access is available. Continue to view
+        the latest community information.
+
+    </div>
+
+
+    <!-- INFO -->
+
+    <p class="info-text">
+
+        Designed to provide a simple and convenient
+        way to access available community updates
+        and information.
+
+    </p>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        © 2026 Community Access
+
+        <br>
+
+        Please review all information before continuing.
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
